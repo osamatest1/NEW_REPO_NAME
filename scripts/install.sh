@@ -13,7 +13,7 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go 
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 go version
-#install gobuster 
+# install gobuster 
 go install github.com/OJ/gobuster/v3@latest
 # install  tools and depandency
 go get -v github.com/OWASP/Amass/v3/...
@@ -40,9 +40,24 @@ go get -u github.com/tomnomnom/httprobe
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go 
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-#export PATH=~/go/bin:$PATH
+export PATH=~/go/bin:$PATH
 
+echo 'Installing FFUF'
+go install github.com/ffuf/ffuf@latest
+echo 'Installing cent'
+GO111MODULE=on go get -u github.com/xm1k3/cent
+echo 'Installing DNSCewl'
+wget -q -O /tmp/DNSCewl https://github.com/codingo/DNSCewl/raw/master/DNScewl && mv /tmp/DNSCewl /usr/bin/DNSCewl && chmod +x /usr/bin/DNSCewl
 
+echo 'Installing dnsx'
+GO111MODULE=on go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+
+echo 'Installing exclude-cdn'
+GO111MODULE=on /usr/local/go/bin/go install github.com/Cgboal/exclude-cdn@latest
+echo 'Installing fff'
+go install github.com/tomnomnom/fff@latest
+echo 'Installing gf'
+go install github.com/tomnomnom/gf@latest
 echo "installation of tools done.." | anew msg.txt 
 
 notify -provider-config configs/notify.yaml -data msg.txt -v 

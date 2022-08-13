@@ -24,9 +24,8 @@ do
 done < "domains.txt"
 
 git add a_records.txtcname_records.txt aaaa_records.txt ptr_records.txt add a_brute.txt cname_brute.txt aaaa_brute.txt ptr_brute.txt
-git config --global user.email "github-email address"
-git config --global user.name "github-username"
+git config --global user.email "max9036461@gmail.com"
+git config --global user.name "osamatest1"
 git commit -a -m "dns resolution is Done , DK"
 git branch -M main
 git push -u origin main
-notify -provider-config ../configs/notify.yaml -data ../configs/dns-done 

@@ -35,19 +35,13 @@ done < "domains.txt"
 
 cat crt.txt | anew subdomains.txt 
 
-
-# remove outof scope domains
-cp ../outofscope.txt .
-../scripts/scope.py 
-cat list.txt | sed 's/ //g' | anew final_list.txt 
-rm list.txt 
+cat subdomains.txt | sed 's/ //g' | anew final_list.txt
 rm asset.txt domains.txt subdomains.txt outofscope.txt crt.txt 
 
 git add final_list.txt 
-git config --global user.email "github email"
-git config --global user.name "github username"
+git config --global user.email "max9036461@gmail.com"
+git config --global user.name "osamatest1"
 git commit -m "Subdomain enumeration completed"
 git branch -M main 
 git push -u origin main
 echo " SUbdomain Enumeraiton is Done.."
-notify -silent -provider-config ../configs/notify.yaml -data ../configs/sub-done

@@ -19,9 +19,9 @@ cat vhosts.txt |cut -d " " -f 1| anew vhost-domain-only.txt
 cat vhost-domain-only.txt | httpx -silent -tech-detect -status-code -vhost -method -follow-redirects  -no-color -rate-limit 150 -cname -x all -websocket -o httpx_vhost.txt
 
 git add vhosts.txt http_probe.txt vhost-domain-only.txt httpx_vhost.txt
-git config --global user.mail "github email"
-git config --global user.name "github username"
-git commit -a -m "vhost finding Done, DK"
+git config --global user.mail "max9036461@gmail.com"
+git config --global user.name "osamatest1"
+git commit -a -m "vhost finding Done"
 git branch -M main 
 git push -u origin main 
 echo "vhost finding is done and push to repo"
