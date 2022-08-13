@@ -25,4 +25,3 @@ git commit -a -m "vhost finding Done"
 git branch -M main 
 git push -u origin main 
 echo "vhost finding is done and push to repo"
-notify -provider-config ../configs/notify.yaml -data ../configs/vhost-done -silent
